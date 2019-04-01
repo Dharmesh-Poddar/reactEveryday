@@ -8,40 +8,43 @@ class Counter extends Component {
 
 
      };
-     constructor(){
 
-        super();
-        this.handleIncreement=this.handleIncreement.bind(this);
-
-     }
-  
-
-    renderTags(){
-       if(this.state.tags==0) return <p>there are no tags</p>;
-  return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>;
-
-
-    }
-
+       
+    
     handleIncreement = () => {
-      console.log("aur dharmesh");
-      
-       // this.setState({Count : this.state.Count +1});
+    
+            this.setState({Count: this.state.Count +1});
 
-    }
+
+      //this.setState({Count : this.state.Count +1});
+
+      
+       
+
+    };
+
     
     render() { 
         return (<div>
             <span  className={this.getBadgeClasses()}>{this.formatCount()}</span>
             <img src="this.state.imageUrl" alt=""/>
             <h1>Hello World</h1>
-            <button onClick={this.handleIncreement()} className="btn btn-secondary btn-sm">Increement</button> 
+            <button onClick={this.handleIncreement} className="btn btn-secondary btn-sm">
+             Increement
+             </button> 
             
           
             
             </div>);
 
     }
+
+    renderTags(){
+      if(this.state.tags==0) return <p>there are no tags</p>;
+ return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>;
+
+
+   }
 
     formatCount(){
 
